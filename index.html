@@ -124,7 +124,7 @@
                 
                     <h3 class="text-left">Soft Skills</h3>
     
-                    <ol type="1" class="display-list">
+                    <div class="display-list">
                         <li>
                             <strong>Problem Solving</strong>
                         </li>
@@ -137,18 +137,18 @@
                         <li>
                             <strong>Leadership</strong>
                         </li>   
-                    </ol>
+                    </div>
                     
                     <h3 class="text-left">Languanges</h3>
 
-                    <ul style="list-style-type: numeric;" class="display-list"></ol>
+                    <div class="display-list">
                         <li>
                             <strong>Indonesia</strong>
                         </li>
                         <li>
                             <strong>English</strong>
                         </li>   
-                    </ul>
+                    </div>
             </div>
 
             <div class="col-six tab-full right">
@@ -468,52 +468,31 @@
 
         <div class="row contact__main">
             <div class="col-eight tab-full contact__form">
-                <form name="contactForm" id="contactForm" method="post" action="">
-                    <fieldset>
-    
+                <form action="https://api.web3forms.com/submit" id="form" method="POST" style="padding-top: 2.5rem;">
                     <div class="form-field">
-                        <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required="" aria-required="true" class="full-width">
+                        <input type="text" name="name" required class="full-width" placeholder="Name">
                     </div>
                     <div class="form-field">
-                        <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required="" aria-required="true" class="full-width">
+                        <input type="email" placeholder="Email" name="email" required class="full-width">
                     </div>
                     <div class="form-field">
-                        <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value="" class="full-width">
+                        <input type="text" placeholder="Subject" name="subject" required class="full-width">
                     </div>
                     <div class="form-field">
-                        <textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="50" required="" aria-required="true" class="full-width"></textarea>
+                        <textarea name="message" id="" required placeholder="Message" class="full-width"></textarea>
+                        <!-- <input type="text" placeholder="Message" name="message" required rows="10" cols="50" class="full-width"> -->
                     </div>
-                    <div class="form-field">
-                        <button class="full-width btn--primary">Submit</button>
-                        <div class="submit-loader">
-                            <div class="text-loader">Sending...</div>
-                            <div class="s-loader">
-                                <div class="bounce1"></div>
-                                <div class="bounce2"></div>
-                                <div class="bounce3"></div>
-                            </div>
-                        </div>
-                    </div>
-    
-                    </fieldset>
-                </form>
-
-                <!-- contact-warning -->
-                <div class="message-warning">
-                    Something went wrong. Please try again.
-                </div> 
-            
-                <!-- contact-success -->
-                <div class="message-success">
-                    Your message was sent, thank you!<br>
-                </div>
-                        
+                    <input type="hidden" name="access_key" value="dfc49b4c-aedd-405a-bc8c-28d93700a962">
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                    <!-- <input type="hidden" name="_next" href="thanks.html"> -->
+                    <!-- <input type="hidden" name="_captcha" value="false">Z -->
+                    <button style="border-radius: 10px;" class="full-width" type="submit">Send</button>
+               </form>   
             </div>
             <div class="col-four tab-full contact__infos">
                 <h4 class="h06">Phone</h4>
                 <p>
                 Mobile: (+62) 822 7899 2840<br>
-                
                 </p>
 
                 <h4 class="h06">Email</h4>
@@ -539,7 +518,7 @@
             <div class="col-full">
 
                 <div class="footer-logo">
-                    <a class="footer-site-logo" href="#0"><img src="images/Bredels.png" alt="Homepage"></a>
+                    <!-- <a class="footer-site-logo" href="#0"><img src="images/Bredels.png" alt="Homepage"></a> -->
                 </div>
 
                 <ul class="footer-social">
@@ -622,7 +601,12 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
-
+    <script>
+        window.onload = function() {
+            // Reset the form fields when the page loads
+            document.getElementById("form").reset();
+        };
+    </script>
 </body>
 
 </html>
