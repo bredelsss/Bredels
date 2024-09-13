@@ -196,6 +196,10 @@ p img {
     margin: 0;
 }
 
+p {
+    font-family: "montserrat-regular";
+}
+
 p.lead {
     font-family: "montserrat-regular", sans-serif;
     font-size: 2rem;
@@ -783,7 +787,7 @@ input[type="button"] {
     line-height: calc(5.4rem - .6rem);
     padding: 0 3rem;
     margin: 0 .3rem 1.2rem 0;
-    color: #151515;
+    color: #ffffff;
     text-decoration: none;
     cursor: pointer;
     text-align: center;
@@ -805,7 +809,7 @@ input[type="reset"]:focus,
 input[type="button"]:focus {
     background-color: #b8b8b8;
     border-color: #b8b8b8;
-    color: #000000;
+    color: #e7e7e7;
     outline: 0;
 }
 
@@ -1971,15 +1975,39 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     margin: 2.5rem 0 3rem;
     padding: .2rem .6rem;
     color: #000000;
-    font-weight: bold;
+    font-weight: 100;
     column-count: 2;
-    column-gap: 20px;
+    column-gap: 1px;
+    list-style-type: numeric;
+}
+
+@media only screen and (max-width: 800px){
+    .display-list {
+        /* column-count: unset; */
+        max-width: 600px;
+        text-align: center;
+        /* margin-left: 4rem; */
+        /* text-align: center; */
+        position: relative;
+    }
+    .display-list .left {
+        padding-right: 3rem;
+    }
+    .display-list .right {
+        padding-left: 15px;
+    }
+    .display-list .right .timeline {
+        margin-top: 0;
+    }
+    .display-list .left > ol, .display-list .right > ol {
+        text-align: center;
+    }
 }
 
 .display-list li strong{
-    font-family: "montserrat-extrabold", sans-serif;
+    font-family: "montserrat-medium", sans-serif;
     color: #0D0A0B; 
-    text-transform: uppercase;
+    text-transform: capitalize;
     line-height: 6.8rem;
     padding: .6rem .6rem;
     margin: 4rem 0 3rem;;
@@ -3113,6 +3141,8 @@ html.no-csstransitions .home-content__main {
 
 .s-contact .form-field {
     position: relative;
+    border-radius: 10px;
+    color: #0F1215;
 }
 
 .s-contact .form-field:after {
